@@ -1,0 +1,59 @@
+Ej1
+
+Socios      (Fecha alta, id socio, Casilleros)
+Asistentes  (Vinculo socio, ultimo acceso)
+Personas    (DNI, nombre, apellido, nacimiento, estado civil, direccion, telefonos)
+
+Casillero           (codigo, ubicacion, tamaño, socios asignados)
+Casilleros jockey   (Division, jugador)(mantener cronologia de usuarios)
+
+Jugador     (DNI, nacimiento, direccion, posicion, division, Alergias/enfermedades)
+                                                           
+Actividad Gratuita (nombre, descripcion, inicio, fin(si posee), socios inscriptos)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Ej2
+
+Libro (ISBN, titulo, genero literario, editorial, Año de edicion, prologo, agradecimientos(opt), precio venta, stock venta, stock prestamo, precio prestamo) -> autor
+Autor (Nombre completo, nacionalidad, pasaporte)
+
+Copia (nr de copia)
+Copia Prestamo (descripcion del estado)
+Copia Venta ()
+
+Cliente (DNI, nombre, direccion, telefono, id cliente)
+Transaccion ()-> cliente
+Prestamo (copias, fecha y hora comienzo, fecha probable devolucion, fecha devolucion)
+Venta(Copias, fecha y hora, numero de ticket)
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Ej3
+                                                           
+Disfraz (Nombre, descripcion, costo de alquiler, tela, colores)
+Ejemplar (codigo, talle, estado(disp, alquilado, etc)) -> Disfraz
+
+Cliente (id cliente, direccion, telefono)
+Institucion (Nombre, descripcion)
+Persona (DNI, nombre, apellido, email(0,1))
+
+Alquiler (fecha, fecha tentativa devolucion, fecha devolucion(0,1), costo total)-> cliente, disfraz
+                                     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Ej4
+
+Compañia      (Nombre, cuit, direccion completa, telefono, mail, comision)
+
+cliente       (Numero cliente, direccion, telefono)
+Fisica        (DNI, apellido, nombre)
+Juridica      (CUIT, razon social)
+
+Poliza        (Numero relativo a compañia, monto asegurado, vigencia(desde hasta), franquicia(opt), costo por mes, tipo, Anterior(Opt)) -> tarjeta
+Tarjeta       (Numero, Fecha vencimiento, CVS, Banco, Entidad)
+
+Cobertura     (Nombre, descripcion cobertura, descripcion de las clausulas)
+Cupon de pago (Monto, fecha de vencimiento) ->(al pagar fecha)
+Siniestro     (Poliza, Fecha, texto descriptivo, info contacto terceros(opt))
