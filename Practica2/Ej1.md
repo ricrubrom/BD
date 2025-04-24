@@ -49,7 +49,7 @@ $$
 $$
   C_1\Leftarrow \pi_{(codVuelo)}(\sigma_{(nacionalidad="Ucraniana")}(Cliente \bowtie Pasaje))\\
   C_2\Leftarrow \pi_{(codVuelo)}(\sigma_{(nombre="Buenos Aires")}(Vuelo\bowtie_{\text{(cod\_ciudad\_destino=codCiudad)}}Ciudad))\\
-  \pi_{\text{(fecha, hora, cod\_ciudad\_origen, cod\_ciudad\_destino, cantidad\_pasajes, codAerolinea)}}(C_1\cup C_2)
+  \pi_{\text{(fecha, hora, cod\_ciudad\_origen, cod\_ciudad\_destino, cantidad\_pasajes, codAerolinea)}}((C_1\cup C_2)\bowtie Vuelo)
 $$
 
 ## Inciso 5
