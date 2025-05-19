@@ -54,17 +54,39 @@ WHERE NOT EXISTS(SELECT 1
 ;
 -- Inciso 7
 
-
+SELECT DISTINCT D.*
+FROM Departamento D
+WHERE NOT EXISTS(SELECT 1
+				 FROM Area A
+						  JOIN Aplicacion Ap ON A.Codarea = Ap.Codarea
+				 WHERE A.Coddepto = D.Coddepto)
 ;
 -- Inciso 8
 
-
+SELECT P.*
+FROM Proyecto P
+		 JOIN Aplicacion A ON P.Codproyecto = A.Codproyecto
+WHERE A.Fechaini < '2010-01-01'
+  AND A.Fechafin IS NULL
 ;
 -- Inciso 9
 
-
+SELECT A.*
+FROM Area A
+		 JOIN Departamento D ON A.Coddepto = D.Coddepto
+WHERE D.Nombred LIKE '%Redes%'
 ;
 -- Inciso 10
 
+SELECT P.*
+FROM Proyecto P
+		 JOIN Aplicacion Ap ON P.Codproyecto = Ap.Codproyecto
+WHERE Ap.Fechafin BETWEEN '2019-01-01' AND '2019-12-31'
 
+EXCEPT
+
+SELECT P2.*
+FROM Proyecto P2
+		 JOIN Aplicacion Ap2 ON P2.Codproyecto = Ap2.Codproyecto
+WHERE Ap2.Fechafin NOT BETWEEN '2019-01-01' AND '2019-12-31'
 ;
